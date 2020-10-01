@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Bejamin's Epic Website</title>
+         <style>
+            body {
+                background: black;
+                color: blue;
+                padding: 10px;
+                font-family: Times New Roman;
+             }
+            #all-contents {
+                max-width: 800px;
+                margin: auto;
+            }
+            /* navigation menu */
+            nav {
+                background: Purple;
+                margin: 0 auto;
+                margin-bottom: 20px;
+                display: flex;
+                padding: 10px;
+                border-radius: 50% 20% / 10% 40%;
+            }
+            h1 {
+                display: flex;
+                align-items: center;
+                color: white;
+                flex: 1;
+                margin: 0;
+            }
+            #nav-ul {
+                list-style-image: none;
+            }
+            .nav-li {
+                display: inline-block;
+                padding: 0 10px;
+            }
+            a {
+                text-decoration: none;
+                color: #fff;
+            }
+
+            /* main container area beneath menu */
+            main {
+                background: Grey;
+                display: flex;
+                border-radius: 30px;
+            }
+            .sidebar {
+                margin-right: 25px;
+                padding: 10px;
+            }
+            .sidebar-img {
+                width: 200px;
+            }
+            .content {
+                flex: 1;
+                padding: 15px;
+            }
+            #interests {
+                border: 4px Purple ridge;
+                padding: 8px;
+                border-radius: 30px;
+            }
+            h2, h3 {
+                margin: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <!--All content goes here-->
+        <div id="all-contents">
+            <nav>
+                <h1>
+                Benjamin's very Epic Website
+                </h1>
+                <ul id="nav-ul">
+                    <li class="nav-li">
+                        <a href="index.html"> home </a>
+                    </li class="nav-li">
+                    <li class="nav-li">
+                        <a href="portfolio.html"> Portfolio </a>
+                    </li>
+                </ul>                
+            </nav>
+
+            <main>
+                 <!--Sidebar section-->
+                <div class="sidebar">
+                    <img class="sidebar-img" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEQ0NERQQDQ0PDQ8NDw0ODhANDQ0PFhcXFhURFxYaHSggGholGxUVITEhJSkrLi4uFyAzODMsNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAJ8BPgMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABQYCAwQBB//EAEoQAAIBAgMDCAcDCQYFBQEAAAECAAMRBBIhBSIxBhMyQVFhcZFSYnKBobHBI0LRFDNTgpKistLhBxZDc8LwVGODo8M0k7PT8RX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/APhsREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREntl7EWrTWoWZSS3C3UbQIGJZ/7sp6b+QlbqJYkdjEeUDCIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAnTRwNR+jTqN4IbecuHJikhw9MhRn+0zNbVt4637QLSXgUejycxDcVVPbcfS86avJWqFZgyO4/w1vveBPXLfDsF6Ry+qd1m8BxMD5m6EEgggjQg6EeImuW/lXh0anz4XK4ZVzcGZTpr/XWVCAiJ04PBvVcU0GZj8B2nsEDmm2jh3boqz+ypb5S5UthYbDKHxB55/R4Lx6l6/fOXGcp2XcoAUl+7lG9x+cCHo8n8S2vNMo9J7Ko8byw4KmaaJSDA5M12HAm9zbuuZWsTtas/SqO3630k9gG+ypewvygdorHtlZxexqty6IatItcOgvx6rdR7pYQZWcLtOrSZjTd03m6J74HFVpMpsylD2MCvzmuW3B8qS2VMQiVly5d4fHTrnVU2FhsQt6B5mr6IOZNBrpApETr2hs+pRfm6gynqPUfAzkgIiT/JXDKzvUZc/N5bKe0317L6dcDDZ/JyrUXOSKXoq43j326hPK/JmuvDI/svb+K0ua1AdAd70ei3kdffMyD1wPnVXZ1VelTfyuPMTkIn0600YuimQtUUOMrbpF8zWgfN4iIC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P0b76eR4e6004nECqxdtxm1Po+6B9AwPKqk1PmaqPVoj80yuM9Iehc8V4W6xw8OBMeoZsgyIWzKt+j75VqNVVGjDzntTaIA01aB3cq8fnFKn2b3lcD5nylbmypULEseJmuBsonW0sWAIRGJ9r4StqdZKYXFhOIFUFV3uOXuI6v6wJxKoIuDmWC0hsNjApf7qn7t+u5+lvKbmx3eIVJZp5mkYcd3iefl3fAlM8ZpGDG94/wB++ZDF96eY/GBJBp6XAFzurIwY7wmuvjAxS+8o3mX/AH/vjA6tp6pp6Stwy6WOo7RK7UOskcVWD9DcQLd+pe7TrPGRrHWEYy78kto5aGQHgzL8b/6vhKROvAYs029U8fxgXvnaNSonOnImbOzKN3P2kDjJjF7foIn5Ph33XXfr5CjMtugobUcNSZQRi78DObGEsNDAseIxwzWQlvRzdLN7puXkNSZmdqrIhN+bCjMndmPHyEq+ycWtGoKtS9Qq2YUx6Q7T1dU7Nq8sK9XRLYdPRTV/ex+loEYcZlOSnfmRUZkU8WF9C1uLWnfh9rAcc1P95fMSHpVgNGUMPIz12pnhnXyIgWeljaTak0Hb10ps3xF5p23j1akadwR0VRLBVa99Aug4Ssm3Vc+631h2vpwAga4iICIiAiIgIiICIiAiIgIiICIiAiIgIiIGwVD3eQjne4eU1xA2c73Dyjne4eU1xA2c73Dyjne4eU1xA286eweU85w93kJriBkTfjMYiAiIgegzIuesmYRAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQP/9k=">
+                </div>
+                <!--Content Section-->
+                <div class="content">
+                    <h2>
+                        Benjamin Abernathy
+                    </h2>
+                    <p>
+                        Student at Mandeville High
+                    </p>
+                    <!--Interest Section-->
+                    <div id="interests">
+                        <h3>Interests</h3>
+                        <ul>
+                            <li>Football</li>
+                            <li>Computers</li>
+                            <li>Virtual Reality</li>
+                        </ul>
+                    </div>
+                </div>
+             </main>
+         </div>
+    </body>
+</html>
