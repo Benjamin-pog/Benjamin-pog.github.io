@@ -11,6 +11,7 @@
             assetKeyProjectile = 'projectile',
             projectileHalfSize = 12;
 
+
         game.cannon = game.add.group();
         game.projectile = game.add.group();
         game.projectile.enableBody = true;
@@ -49,7 +50,7 @@
             
             if (type === "top") {
                 x = position, y = 40;
-                angle = -180;
+                angle = 90;
                 tweenTo.y = game.world.height;
             } else if (type === "bottom") {
                 x = position, y = game.world.height - 72;
@@ -61,7 +62,7 @@
                 tweenTo.x = game.world.width;
             } else if (type === "right") {
                 x = game.world.width - 42, y = position;
-                angle = -90;
+                angle = -180;
                 tweenTo.x = 0
             } else {
                 throw new Error(`${type} is not a valid cannon type`);
