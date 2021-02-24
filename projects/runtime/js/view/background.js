@@ -36,11 +36,46 @@ var background = function (window) {
             // TODO: 2 - Part 2
             // this fills the background with a obnoxious yellow
             // you should modify this to suit your game
-            var backgroundFill = draw.rect(canvasWidth,canvasHeight,'yellow');
+            var backgroundFill = draw.rect(canvasWidth, 403,'steelblue');
             background.addChild(backgroundFill);
             
-            // TODO: 3 - Add a moon and starfield
-            
+            // TODO: 3 - Add a moon and starfield      
+
+            var bush = draw.bitmap('img/bush.png');
+                bush.x = 100;
+                bush.y = 323;
+                bush.scaleX = 0.5;
+                bush.scaleY = 0.5;
+                background.addChild(bush);
+
+            var clouds = draw.bitmap('img/clouds.png');
+                clouds.x = 30;
+                clouds.y = 50;
+                clouds.scaleX = 0.09;
+                clouds.scaleY = 0.09;
+                background.addChild(clouds);
+
+            var smallCloud = draw.bitmap('img/smallCloud.png');
+                smallCloud.x = 268;
+                smallCloud.y = 33;
+                smallCloud.scaleX = 0.27;
+                smallCloud.scaleY = 0.27;
+                background.addChild(smallCloud);
+
+            var clouds = draw.bitmap('img/clouds.png');
+                clouds.x = 415;
+                clouds.y = 65;
+                clouds.scaleX = 0.09;
+                clouds.scaleY = 0.09;
+                background.addChild(clouds);
+
+            var circle;
+                for(var i=0;Int32Array;i++) {
+                    circle = draw.circle(10,'white','LightGray',2);
+                    circle.x = canvasWidth*Math.random();
+                    circle.y = 80;
+                    background.addChild(circle);
+                }
             
             // TODO: 5 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
             
