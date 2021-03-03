@@ -1,0 +1,25 @@
+                                                        User/Gameplay
+Describe the gameplay
+    Two vertically moving paddles trying to keep the bouncing ball from going past a line behind them by blocking its trajectory
+What are the conditions when the game begins?
+    the balls goes to one side spawing in the middle
+Does the game have an end? If so, what are the conditions for when it ends?
+    It ends when one player reaches a certain score. The game ends, and will start a new one.
+What if's will be there?
+    Perhaps if player 1 score>10 then console.log("Player 1 wins!)
+                                                        Visual Game Components
+What are the visual game components? For example, in Bouncing Box, the game components were the board and the box.
+    two paddles, black backgrounds, ball, and dotted verticle line in the middle
+Which will be static? (the board)
+    the dotted line and black backgrounds
+Which will be animated? (the box)
+    the paddles and ball and score
+What data will you need to manage each game component? For example, in Bouncing Box, the data values were positionX, speedX, and points.
+    postionX, position Y,         position Y,       score
+                                                        Events / Logic
+What events will occur in this game? (timer events, keyboard events, clicking events?)
+    Passing the opposing players line will trigger the ball to be reset and their score to go up 1, up and down arrows will move the paddle
+How do those events affect the data of the program?
+    The score change will affect whats displayed, and the so will the arrow keys
+For each "event", write out the high-level logic of what will happen. It is better (and tricky) to be as specific as you can while remaining high-level!
+    
