@@ -1,7 +1,9 @@
 
 body {
-  background-color: darkgreen;
+  background-color: purple;
 }
+
+/* elements within the board */
 
 #board {
   width: 440px;
@@ -11,11 +13,37 @@ body {
   position: relative;
 }
 
-#gameItem {
-  background-color: teal;
-  width: 50px;
-  height: 50px;
+#midline {
+    width: 1px;
+
+}
+
+/* unlike the above board elements, these scores will change css */
+
+#p1score {
+    width: 1px;
+}
+
+#p2score {
+    width: 1px;
+}
+
+/* p1 is the left paddle, p2 is the right paddle. These paddles are set to be seeable and controlled by the player */
+
+#p1paddle {
+  background-color: blue;
+  width: 20px;
+  height: 80px;
   position: absolute;
-/*   left: 100px; */  /* Uncomment if you want to set a "starting" position */
-/*   top: 100px;  */  /* Uncomment if you want to set a "starting" position */
+  left: 20px;
+  top: 175px;
+}
+
+#p2paddle {
+    background-color: red;
+    width: 20px;
+    height: 80px;
+    position: absolute;
+    left: 400px;
+    top: 175px;
 }
