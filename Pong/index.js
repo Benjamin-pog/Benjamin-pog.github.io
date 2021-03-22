@@ -13,21 +13,20 @@ function runProgram(){
   
   // Game Item Objects
 
-function MFDOOM($id) {
+    function MFDOOM($id) {
     var allcaps = {};
     allcaps.id = $id;
-    allcaps.y = $($id).css('top');
-    allcaps.x = $($id).css('left');
+    allcaps.positionY = $($id).css('top');
+    allcaps.positionX = $($id).css('left');
     allcaps.speedY = 0;
     allcaps.speedX = 0;
     return allcaps;  
-}
+    }
 
-var paddle1 = MFDOOM('#p1paddle');
-var paddle2 = MFDOOM('#p2paddle');
-var ball = MFDOOM('#ball');
+    var paddle1 = MFDOOM('#p1paddle');
+    var paddle2 = MFDOOM('#p2paddle');
 
-/* ned this key variable to define what different keys strikes will do */
+    /* ned this key variable to define what different keys strikes will do */
 
     var key = {
     'UP': 87,
@@ -73,52 +72,53 @@ var ball = MFDOOM('#ball');
     // turn off event handlers
     $(document).off();
   }
-  
-}
 
-/* My attempt at making the keys actually move the paddles */
+    /* My attempt at making the keys actually move the paddles */
 
-/* ----------------- How do I reference the paddle1/2's speed? (Not #paddle1/2 but the variable that was created below the factoryfunction)----------------- */
+    /* ----------------- How do I reference the paddle1/2's speed? (Not #paddle1/2 but the variable that was created below the factoryfunction)----------------- */
 
-/* Right now i just want to get the paddles to move so i can move on to everything that i better understand*/
+    /* Right now i just want to get the paddles to move so i can move on to everything that i better understand*/
 
     function handleKeyDown(event) {
         if (event.which === key.UP) {
-            paddle.speedY = 5;
+            paddle1.speedY = 5;
         } if (event.which === key.DOWN) {
-            paddle1.speedY = -5
+            paddle1.speedY = -5;
+        } if (event.which === key.UP2) {
+            paddle2.speedY = 5;
+        } if (event.which === key.DOWN2) {
+            paddle2.speedY = -5;
         }
     }
 
-function handleKeyUp(event) {
-    if (event.which === key.UP2) {
-        paddle2.speedY = -5;
-    } if (event.which === key.DOWN2) {
-        paddle2.speedY = -5;
+    function handleKeyUp(event) {
+        if (event.which === key.UP2) {
+            paddle2.speedY = 0;
+        } if (event.which === key.DOWN2) {
+            paddle2.speedY = 0;
+        } if (event.which === key.UP) {
+            paddle1.speedY = 0;
+        } if (event.which === key.DOWN) {
+            paddle1.speedY = 0;
+        }
     }
-}
 
-/* this is simply a test because i am getting errors about the x/y position/speed being undifined */
+    /*Helping the redraw function work by making the speed mean something */
 
-/* -------------ARE THESE VARIABLES ACTUALLY NEEDED OR WILL BE USED?---------------- */
+    function repositionGameItem() {
+    ball.positionX += ball.speedX;
+    ball.positionY += ball.speedY;
+    paddle1.positionY += paddle1.speedY;
+    paddle2.positionY += paddle2.speedY;
+    }
 
-var speedX;
-var speedY;
-var positionX;
-var positionY;
+    /*Redrawing positions every tick */
 
-/*Helping the redraw function work by making the speed mean something */
+    function redrawGameItem() {
+        $("#paddle1").css("top", paddle1.positionY);
+        $("#paddle2").css("top", paddle2.positionY);
+        $('#ball').css("top", ball.positionY);
+        $('#ball').css("left", ball.positionX);
+    }
 
-function repositionGameItem() {
-    positionX += speedX;
-    positionY += speedY;
-}
-
-/*Redrawing positions every tick */
-
-function redrawGameItem() {
-    $("#paddle1").css("top", positionY);
-    $("#paddle2").css("top", positionY);
-    $('#ball').css("top", positionY);
-    $('#ball').css("left", positionX);
 }
