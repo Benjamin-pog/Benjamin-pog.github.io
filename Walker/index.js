@@ -40,6 +40,7 @@ function runProgram(){
   function newFrame() {
     repositionGameItem();
     redrawGameItem();
+    tooFar();
   }
 
 
@@ -48,7 +49,7 @@ function runProgram(){
   */
   function handleKeyDown(event) {
     if (event.which === key.LEFT) {
-        speedX= -5;
+        speedX = -5;
         console.log('Left was slammed')
     } if (event.which === key.RIGHT) {
         speedX = 5;
@@ -101,4 +102,17 @@ function runProgram(){
     $(document).off();
   }
   
+  /* UH EXTRA STUF N STUF IDK HOW MUCH ILL DO */
+
+  function tooFar() {
+    if (positionX < 0) {
+        positionX = 0;
+    } if (positionX > 390) {
+        positionX = 390;
+    } if (positionY < 0) {
+        positionY = 0;
+    } if (positionY > 390) {
+        positionY = 390;
+    }
+  }
 }

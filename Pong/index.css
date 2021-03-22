@@ -28,7 +28,7 @@ body {
     width: 1px;
 }
 
-/* p1 is the left paddle, p2 is the right paddle. These paddles are set to be seeable and controlled by the player */
+/* p1 is the left paddle, p2 is the right paddle. These paddles are set to be seeable and controlled by the player (ball too) */
 
 #p1paddle {
   background-color: blue;
@@ -46,4 +46,8 @@ body {
     position: absolute;
     left: 400px;
     top: 175px;
+}
+
+#ball {
+    background-color: white;
 }

@@ -13,6 +13,28 @@ function runProgram(){
   
   // Game Item Objects
 
+function MFDOOM($id) {
+    var allcaps = {};
+    allcaps.id = $id;
+    allcaps.y = $($id).css('top');
+    allcaps.x = $($id).css('left');
+    allcaps.speedY = 0;
+    allcaps.speedX = 0;
+    return allcaps;  
+}
+
+var paddle1 = MFDOOM('#p1paddle');
+var paddle2 = MFDOOM('#p2paddle');
+var ball = MFDOOM('#ball');
+
+/* ned this key variable to define what different keys strikes will do */
+
+    var key = {
+    'UP': 87,
+    'DOWN': 83,
+    'UP2': 38,
+    'DOWN2': 40,
+    };
 
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
@@ -29,8 +51,7 @@ function runProgram(){
   */
   function newFrame() {
     repositionGameItem();
-
-    noEscape();
+    redrawGameItem(); 
   }
   
   /* 
@@ -55,66 +76,47 @@ function runProgram(){
   
 }
 
-/*solid spot for the factory function that controls(paddle 1 + 2, ) */
+/* My attempt at making the keys actually move the paddles */
 
-function MFDOOM($id) {
-    var allcaps = {};
-    allcaps.id = $id;
-    allcaps.y = $(id).css('top');
-    allcaps.speedY = 0;
-}
+/* ----------------- How do I reference the paddle1/2's speed? (Not #paddle1/2 but the variable that was created below the factoryfunction)----------------- */
 
-var paddle1 = MFDOOM('#p1paddle');
-var paddle2 = MFDOOM('#p2paddle');
-
-/* speaking of caps lets talk about keycaps and how keys presses will be used */
-
-var key = {
-'UP': 87,
-'DOWN': 83,
-'UP2': 38,
-'DOWN2': 40,
-};
-
-function handleKeyDown(event) {
-    var bruh = event.which;
-    if (bruh === key.UP) {
-
+    function handleKeyDown(event) {
+        if (event.which === key.UP) {
+            paddle.speedY = 5;
+        } if (event.which === key.DOWN) {
+            paddle1.speedY = -5
+        }
     }
-}
 
 function handleKeyUp(event) {
-    var bruhR = event.which;
-    if (bruhR === key.UP) {
-
+    if (event.which === key.UP2) {
+        paddle2.speedY = -5;
+    } if (event.which === key.DOWN2) {
+        paddle2.speedY = -5;
     }
 }
 
-/* gotta make those speeds actually mean something to the position of the paddles */
+/* this is simply a test because i am getting errors about the x/y position/speed being undifined */
+
+/* -------------ARE THESE VARIABLES ACTUALLY NEEDED OR WILL BE USED?---------------- */
+
+var speedX;
+var speedY;
+var positionX;
+var positionY;
+
+/*Helping the redraw function work by making the speed mean something */
 
 function repositionGameItem() {
     positionX += speedX;
     positionY += speedY;
 }
 
-/*Do I need a redrawGameItem() function in this case */
+/*Redrawing positions every tick */
 
-
-/* uhhhh make the paddles not fly away */
-
-function noEscape() {
-    if ( blalbla.y > 360) {
-        blalbala.y = 360;
-    } if (blabalaba.y < 0) {
-        blabala.y = 0;
-    } if (blabala2.y > 360) {
-        blabala2.y = 360;
-    } if (blabala2.y < 0) {
-        blabala2.y = 0;
-    }
+function redrawGameItem() {
+    $("#paddle1").css("top", positionY);
+    $("#paddle2").css("top", positionY);
+    $('#ball').css("top", positionY);
+    $('#ball').css("left", positionX);
 }
-
-/* how do I call a specific ID's x or speedX??? (for things like the handlekey functions) */
-/* Do i need 2 handlekeup/down functions??? */
-/* Did i set up the factory function + key correctly in this situation */
-/*Do I need a redrawGameItem() function in this case */
