@@ -80,6 +80,8 @@ var ball = MFDOOM('#ball');
 
 /* ----------------- How do I reference the paddle1/2's speed? (Not #paddle1/2 but the variable that was created below the factoryfunction)----------------- */
 
+/* Right now i just want to get the paddles to move so i can move on to everything that i better understand*/
+
     function handleKeyDown(event) {
         if (event.which === key.UP) {
             paddle.speedY = 5;
