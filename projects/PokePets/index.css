@@ -1,0 +1,57 @@
+body {
+    background-color: purple;
+}
+
+/* Character slection */
+
+#screen1 {
+    width: 1;
+}
+
+/* Bottom section selection stuff */
+
+/*top section character stuff */
+
+/* PokePet selection screen */
+
+#screen2 {
+    width: 1;
+}
+
+/* bottom section selection stuff */
+
+/* top section PokePet */
+
+/* battle scene - 4 splits */
+
+#battle {
+    width: 1;
+}
+
+/* Bottom left - players pokepet  */
+
+/* Bottom Right - Players PokePets Moves and health + name  */
+
+/* Top left - opponents health + name  */
+
+/* top Right - opponents pokepet  */
+
+
+
+/* Trainers Design */
+
+#Steven {
+    width: 1;
+}
+
+#Anna {
+    width: 1;
+}
+
+#Joel {
+    width: 1;
+}
+
+#Ben {
+    width: 1;
+}

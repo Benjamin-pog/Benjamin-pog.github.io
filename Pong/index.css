@@ -30,24 +30,29 @@ body {
 
 /* p1 is the left paddle, p2 is the right paddle. These paddles are set to be seeable and controlled by the player (ball too) */
 
+.paddles {
+    width: 20px;
+    height: 80px;
+    position: absolute;
+}    
 #p1paddle {
   background-color: blue;
-  width: 20px;
-  height: 80px;
-  position: absolute;
   left: 20px;
   top: 175px;
 }
 
 #p2paddle {
     background-color: red;
-    width: 20px;
-    height: 80px;
-    position: absolute;
     left: 400px;
     top: 175px;
 }
 
 #ball {
     background-color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    position: absolute;
+    left: 220px;
+    top: 220px;
 }
