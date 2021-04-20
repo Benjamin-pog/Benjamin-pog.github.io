@@ -77,6 +77,7 @@ function runProgram() {
     redrawGameItem();
     tooFar();
     handleAllCollisions();
+    work();
   }
   
   /* 
@@ -168,21 +169,23 @@ function runProgram() {
         obj2.rightX = obj2.positionX + obj2.width;
         obj2.bottomY = obj2.positionY + obj2.height;
 
-	    if ((obj1.rightX > obj2.leftX) &&
+        if ((obj1.rightX > obj2.leftX) &&
             (obj1.leftX < obj2.rightX) &&
             (obj1.bottomY > obj2.topY) &&
-            (obj1.topY < obj2.bottomY)) {
+            (obj1.topY < obj2.bottomY)) { //fix the pinch glitch
             return true;                  
         } else {
             return false;
         }
 
     }
-    //paddle collisions + wall collision
+    //paddle collisions + wall collision + inc speed
     function handleAllCollisions() {
 
         if (doCollide(paddle1, ball) || doCollide(paddle2, ball)) {
-            ball.speedX = ball.speedX * -1;
+            ball.speedX = ball.speedX * -1.24;
+        } if (ball.speedX > 7.6) {
+            ball.speedX = 7.6;
         } if (ball.positionY < 0) {
             ball.speedY = ball.speedY * -1;
         } if (ball.positionY > 420) {
@@ -194,11 +197,37 @@ function runProgram() {
         }
     }
 
-    //scores + raising speed
+    //scores
 
+    var score = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    var score2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-
-
+    function work() {
+        var scoreboard = score[0];
+        var scoreboard2 = score2[0];
+        if (ball.positionX < 0) {
+            score2.shift();
+            ball.positionX = 220;
+            ball.positionY = 220;
+            ball.speedX = 0;
+            ball.speedY = 0;
+            $('#ball').css("background-color", "white");
+            reallyBruh();
+        } if (ball.positionX > 420) {
+            score.shift();
+            ball.positionX = 220;
+            ball.positionY = 220;
+            ball.speedX = 0;
+            ball.speedY = 0;
+            $('#ball').css("background-color", "white");
+            reallyBruh();
+        } if (scoreboard > 9 || scoreboard2 > 9) {
+            endGame();
+            //Add big message
+        }
+        $('#p1score').text(scoreboard);
+        $('#p2score').text(scoreboard2);
+    }
 
 
 
