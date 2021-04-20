@@ -20,12 +20,19 @@ body {
 
 /* unlike the above board elements, these scores will change css */
 
+.scores {
+    font-size: 120px;
+    position: absolute
+}
+
 #p1score {
-    width: 1px;
+    left: 20px;
+    top: 470px;
 }
 
 #p2score {
-    width: 1px;
+    left: 400px;
+    top: 470px;
 }
 
 /* p1 is the left paddle, p2 is the right paddle. These paddles are set to be seeable and controlled by the player (ball too) */

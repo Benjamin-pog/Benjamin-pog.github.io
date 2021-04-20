@@ -29,15 +29,26 @@ function runProgram() {
     var paddle2 = MFDOOM('#p2paddle');
     var ball = MFDOOM('#ball');
 
-    //Ball starting (is there a more efficient way?)
+    //randomly generated direction and angle for the starting ball
 
-    var idk = Math.ceil(Math.random() * 2)
-    if (idk === 2) {
-        ball.speedY = Math.ceil(Math.random() * 2)
-    } else {
-        ball.speedY = Math.ceil(Math.random() * -2)
+    function reallyBruh() {
+        var idk = Math.ceil(Math.random() * 2);
+        if (idk === 2) {
+            ball.speedY = Math.random() * 2.5;
+        } else {
+            ball.speedY = Math.random() * -2.5;
+        }
+        if (ball.speedY === 0 || Math.abs(ball.speedY) < 0.3) {
+            reallyBruh();
+        } 
+        var idk2 = Math.ceil(Math.random() * 2); //Seperate from the first idk function to make sure the ball can head all directions
+        if (idk2 === 2) {
+            ball.speedX = 1;
+        } else {
+            ball.speedX = -1;
+        }
     }
-    ball.speedX = -1;
+    reallyBruh();  
 
     /* ned this key variable to define what different keys strikes will do */
 
@@ -65,7 +76,7 @@ function runProgram() {
     repositionGameItem();
     redrawGameItem();
     tooFar();
-    doCollide();
+    handleAllCollisions();
   }
   
   /* 
@@ -147,8 +158,8 @@ function runProgram() {
 
     //Ball collision and movement
 
-    function doCollide(obj1, obj2) { //Debugger not agreeing with obj1+2, says they're undefined
-        obj1.leftX = obj1.positionX; //The .positions are undefined *fix it*
+    function doCollide(obj1, obj2) { 
+        obj1.leftX = obj1.positionX; 
         obj1.topY = obj1.positionY;
         obj1.rightX = obj1.positionX + obj1.width;
         obj1.bottomY = obj1.positionY + obj1.height;
@@ -161,33 +172,38 @@ function runProgram() {
             (obj1.leftX < obj2.rightX) &&
             (obj1.bottomY > obj2.topY) &&
             (obj1.topY < obj2.bottomY)) {
-                                        //What goes here?
+            return true;                  
+        } else {
+            return false;
         }
 
     }
     //paddle collisions + wall collision
-    if (doCollide(paddle1, ball) || doCollide(paddle2, ball)) { //How do I reference the walls to make sure the ball bounces off
-        ball.speedX = ball.speedX * -1;
-    } if (ball.positionY < 0) {
-        ball.speedY = ball.speedY * -1;
-    } if (ball.positionY > 440) {
-        ball.speedY = ball.speedY * -1;
+    function handleAllCollisions() {
+
+        if (doCollide(paddle1, ball) || doCollide(paddle2, ball)) {
+            ball.speedX = ball.speedX * -1;
+        } if (ball.positionY < 0) {
+            ball.speedY = ball.speedY * -1;
+        } if (ball.positionY > 420) {
+            ball.speedY = ball.speedY * -1;
+        } if (doCollide(paddle1, ball)) {
+            $('#ball').css("background-color", "blue");
+        } if (doCollide(paddle2, ball)) {
+            $('#ball').css("background-color", "red");
+        }
     }
 
-    /*  //Scoring
+    //scores + raising speed
 
 
 
 
 
-    if (ball.positionX < 0) {
-        score1 = score1 + 1;
-    } if (ball.positionX > 440) {
-        score2 = score2 + 1;
-    } if (ball.positionY < 0) {
-        ball.speedY = ball.speedY * -1; //Should I use the || here
-    } if (ball.positionY > 440) {
-        ball.speedY = ball.speedY * -1;
-    }
-    */
+
+
+    // culurs
+
+    
+
 }
