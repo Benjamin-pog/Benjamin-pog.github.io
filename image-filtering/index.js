@@ -6,7 +6,7 @@ $(document).ready(function(){
     // TODO: Call your apply function(s) here
 
 
-
+    applyFilter();
 
 
     render($display, image);

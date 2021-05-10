@@ -27,11 +27,11 @@ function runProgram(){
 
     // stop the interval timer
 
-    clearInterval(interval);
+        clearInterval(interval);
 
     // turn off event handlers
 
-    $(document).off();
+        $(document).off();
     }
 
     //Controls

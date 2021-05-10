@@ -7,6 +7,7 @@ Does the game have an end? If so, what are the conditions for when it ends?
     It ends when one player reaches a certain score. The game ends, and will start a new one.
 What if's will be there?
     Perhaps if player 1 score>10 then console.log("Player 1 wins!)
+
                                                         Visual Game Components
 What are the visual game components? For example, in Bouncing Box, the game components were the board and the box.
     two paddles, black backgrounds, ball, and dotted verticle line in the middle
@@ -22,4 +23,4 @@ What events will occur in this game? (timer events, keyboard events, clicking ev
 How do those events affect the data of the program?
     The score change will affect whats displayed, and the so will the arrow keys
 For each "event", write out the high-level logic of what will happen. It is better (and tricky) to be as specific as you can while remaining high-level!
-    
+    When passing a players 'line', the ball speed will be reseted, the ball's position will be back to the middle, and the opposing players score will rise 1.
