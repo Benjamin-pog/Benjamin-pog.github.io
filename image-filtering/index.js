@@ -6,8 +6,8 @@ $(document).ready(function(){
     // TODO: Call your apply function(s) here
 
     applyFilter(reddify);
-
-
+    applyFilter(decreaseBlue);
+    //applyFilter(increaseGreenByBlue);
 
     render($display, image);
 });
@@ -31,6 +31,12 @@ function applyFilter(filterFunction) {
 
 // TODO 5: Create the applyFilterNoBackground function
 
+function applyFilterNoBackground() {
+
+}
+
+
+
 
 // TODO 2 & 4: Create filter functions
 
@@ -40,11 +46,13 @@ function reddify(array) {
 reddify(image);
 
 function decreaseBlue(array) {
-
+    array[BLUE] = Math.max(BLUE - 30, 0);
 }
+decreaseBlue(image);
 
-function increaseGreenByBlue() {
-
+function increaseGreenByBlue(array) {
+    array[GREEN] = Math.min(BLUE + GREEN, 0);
 }
+increaseGreenByBlue(image);
 
 // CHALLENGE code goes below here
