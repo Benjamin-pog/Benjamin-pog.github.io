@@ -7,7 +7,7 @@ $(document).ready(function(){
 
     applyFilter(reddify);
     applyFilter(decreaseBlue);
-    //applyFilter(increaseGreenByBlue);
+    applyFilter(increaseGreenByBlue);
 
     render($display, image);
 });
@@ -46,12 +46,12 @@ function reddify(array) {
 reddify(image);
 
 function decreaseBlue(array) {
-    array[BLUE] = Math.max(BLUE - 30, 0);
+    array[BLUE] = Math.max(BLUE-30, 0);
 }
 decreaseBlue(image);
 
 function increaseGreenByBlue(array) {
-    array[GREEN] = Math.min(BLUE + GREEN, 0);
+    array[GREEN] = Math.min(BLUE+GREEN, 0);
 }
 increaseGreenByBlue(image);
 
