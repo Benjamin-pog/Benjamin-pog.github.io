@@ -44,15 +44,12 @@ function reddify(array) {
     array[RED] = 255;
 } 
 reddify(image);
-
 function decreaseBlue(array) {
-    array[BLUE] = Math.max(BLUE-30, 0);
+    array[BLUE] = Math.max(image[BLUE] - 30, 0);
 }
-decreaseBlue(image);
 
 function increaseGreenByBlue(array) {
-    array[GREEN] = Math.min(BLUE+GREEN, 0);
+    array[GREEN] = Math.min(image[BLUE] + image[GREEN], 250);
 }
-increaseGreenByBlue(image);
 
 // CHALLENGE code goes below here
