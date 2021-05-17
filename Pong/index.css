@@ -24,8 +24,7 @@ body {
     position: absolute;
     height: 430px;
     left: 220px;
-    top: 5px;
-    border: 1px dashed white;
+    border: 5px dashed white;
 }
 
 /* unlike the above board elements, these scores will change css */
