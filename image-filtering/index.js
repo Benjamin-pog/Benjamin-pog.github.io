@@ -47,7 +47,6 @@ function applyFilterNoBackground(filterFunction) {
             }
         }
     }
-    
 }
 
 // TODO 2 & 4: Create filter functions
