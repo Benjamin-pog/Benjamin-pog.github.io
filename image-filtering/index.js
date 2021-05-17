@@ -37,10 +37,7 @@ function applyFilter(filterFunction) {
 function applyFilterNoBackground(filterFunction) {
     for (var j = 0; j < image.length; j++) {
         for (var k = 0; k < image[j].length; k++) {
-            if (image[RED] === 150 && image[BLUE] === 150 && image[GREEN] === 150) {
-                image[RED] = 150;
-                image[BLUE] = 150;
-                image[GREEN] = 150;
+            if (image[j][k] === image[0][0]) {
             } else {    
                 rgbString = image[j][k];
                 var rgbNumbers = rgbStringToArray(rgbString);
