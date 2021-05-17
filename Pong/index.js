@@ -14,15 +14,15 @@ function runProgram() {
   // Game Item Objects
 
     function MFDOOM($id) {
-    var allcaps = {};
-    allcaps.id = $id;
-    allcaps.positionY = parseFloat($($id).css('top'));
-    allcaps.positionX = parseFloat($($id).css('left'));
-    allcaps.width = $($id).width();
-    allcaps.height = $($id).height();
-    allcaps.speedY = 0;
-    allcaps.speedX = 0;
-    return allcaps;  
+        var allcaps = {};
+        allcaps.id = $id;
+        allcaps.positionY = parseFloat($($id).css('top'));
+        allcaps.positionX = parseFloat($($id).css('left'));
+        allcaps.width = $($id).width();
+        allcaps.height = $($id).height();
+        allcaps.speedY = 0;
+        allcaps.speedX = 0;
+        return allcaps;  
     }
 
     var paddle1 = MFDOOM('#p1paddle');
@@ -222,17 +222,15 @@ function runProgram() {
             $('#ball').css("background-color", "white");
             reallyBruh();
         } if (scoreboard > 9 || scoreboard2 > 9) {
-            endGame();
-            //Add big message
+            endGame(); 
+        } if (scoreboard > 9) {
+            $('#gg').text('Blue Wins!');
+            $('#gg').css("color", "blue");
+        } if (scoreboard2 > 9) {
+            $('#gg').text('Red Wins!');
+            $('#gg').css("color", "red");
         }
         $('#p1score').text(scoreboard);
         $('#p2score').text(scoreboard2);
     }
-
-
-
-    // culurs
-
-    
-
 }

@@ -20,7 +20,6 @@ $(document).ready(function(){
 
 // TODO 1 & 3: Create the applyFilter function here
 
-/*
 function applyFilter(filterFunction) {
     for (var o = 0; o < image.length; o++) {
         for (var p = 0;  p < image[o].length; p++) {
@@ -32,7 +31,6 @@ function applyFilter(filterFunction) {
         }
     }
 }
-*/
 
 // TODO 5: Create the applyFilterNoBackground function
 
@@ -43,7 +41,7 @@ function applyFilterNoBackground(filterFunction) {
                 image[RED] = 150;
                 image[BLUE] = 150;
                 image[GREEN] = 150;
-            } if (image[RED, BLUE, GREEN] !== 150) {    
+            } else {    
                 rgbString = image[j][k];
                 var rgbNumbers = rgbStringToArray(rgbString);
                 filterFunction(rgbNumbers);
